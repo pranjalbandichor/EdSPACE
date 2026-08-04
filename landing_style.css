@@ -1,0 +1,665 @@
+/* ==========================================================================
+   Global Variables & Reset
+   ========================================================================== */
+:root {
+  --primary: rgb(0, 178, 209);
+  --primary-hover: rgb(0, 144, 169);
+  --text-dark: rgb(43, 47, 56);
+  --text-muted: rgb(94, 134, 141);
+  --bg-gradient: linear-gradient(
+    rgb(189, 225, 250) 0%,
+    rgb(162, 233, 225) 100%
+  );
+  --card-bg: rgba(255, 255, 255, 0.55);
+  --border-glass: rgba(255, 255, 255, 0.6);
+  --font-main: "Manrope", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  font-family: var(--font-main);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Common Typography & Buttons
+   ========================================================================== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.spantext {
+  background: linear-gradient(
+    to right,
+    rgb(0, 178, 209),
+    rgb(16, 185, 129),
+    rgb(0, 144, 169)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn {
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  color: white;
+  background-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0px 10px 20px rgba(0, 144, 169, 0.4);
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.btn-login {
+  background: transparent;
+  color: var(--text-dark);
+  margin-right: 15px;
+}
+
+.btn-login:hover {
+  color: var(--primary);
+}
+
+.btn-large {
+  padding: 12px 24px;
+  border-radius: 18px;
+  font-size: 15px;
+}
+
+/* ==========================================================================
+   Header Navigation
+   ========================================================================== */
+.header {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  padding: 0 5%;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.header-middle {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-link {
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: calc(100vh - 65px);
+  padding: 100px 8% 40px;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tagline {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.tagline2 {
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.hero-image-container {
+  flex: 1;
+}
+
+/* ==========================================================================
+   Partners / Sponsor Box
+   ========================================================================== */
+.sponser-box {
+  padding: 2.5em 5%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.25);
+  align-items: center;
+  gap: 20px;
+}
+
+.sp-box-head {
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.companies {
+  color: rgb(60, 60, 60);
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* ==========================================================================
+   Courses Section
+   ========================================================================== */
+.course-sec {
+  padding: 5em 8%;
+}
+
+.course-sec-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.top-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sec-txt {
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 800;
+}
+
+.sec-tag {
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.view-all-link {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.course-card {
+  background: var(--card-bg);
+  border-radius: 24px;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-glass);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.course-image {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.course-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 1.5em;
+}
+
+.rating {
+  color: #f59e0b;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.course-tag {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.extras {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.job {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.12);
+}
+
+.cert {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.12);
+}
+
+/* ==========================================================================
+   Student Earn Box
+   ========================================================================== */
+.stu_box {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 5em 8%;
+}
+
+.stu_main {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stu_right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stu_righth2 {
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 800;
+}
+
+.stu-description {
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: var(--text-muted);
+}
+
+.benefitbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.benefitstick {
+  height: 18px;
+  width: 18px;
+}
+
+/* ==========================================================================
+   Why Choose Section
+   ========================================================================== */
+.WhyChoose {
+  padding: 5em 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.WhyChoosehead {
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 800;
+}
+
+.WhyChoosesubhead {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  margin-bottom: 50px;
+}
+
+.WhyChoosebox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  text-align: left;
+}
+
+.feature-card {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.box1head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.WhyChooseboxtitle {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.benefit1 {
+  height: 28px;
+}
+
+.box-des {
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Testimonials / Stories
+   ========================================================================== */
+.stories {
+  padding: 3em 8%;
+}
+
+.storiesbox {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3em 5%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.2)
+  );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: 24px;
+  gap: 40px;
+}
+
+.storieshead {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.storieshead h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+}
+
+.storiesarrow {
+  background-color: rgba(0, 178, 209, 0.6);
+  border-radius: 50%;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  transition: background 0.2s;
+}
+
+.storiesarrow:hover {
+  background-color: var(--primary);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.review-card {
+  background-color: white;
+  padding: 2em;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review-text {
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+.reviewauthor {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  gap: 15px;
+  font-weight: 700;
+}
+
+.authorpfp {
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   CTA Section
+   ========================================================================== */
+.ctasection {
+  padding: 3em 8% 5em;
+}
+
+.ctabox {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary);
+  border-radius: 24px;
+  padding: 4em 2em;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ctah {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+}
+
+.ctah2 {
+  font-size: clamp(16px, 2vw, 20px);
+  max-width: 650px;
+  opacity: 0.95;
+}
+
+.ctabutton {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn-cta-main {
+  color: var(--primary);
+  background-color: white;
+  padding: 14px 28px;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.btn-cta-main:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-cta-alt {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 14px 28px;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.btn-cta-alt:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 120px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .stu_main {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-middle {
+    display: none; /* Hide top links on mobile */
+  }
+
+  .hero-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .course-sec,
+  .stu_box,
+  .WhyChoose,
+  .stories,
+  .ctasection {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .companies {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-login {
+    display: none; /* Keep header minimal on mobile screen sizes */
+  }
+
+  .ctabutton {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-cta-main,
+  .btn-cta-alt {
+    width: 100%;
+  }
+}
