@@ -6,10 +6,8 @@
   --primary-hover: rgb(0, 144, 169);
   --text-dark: rgb(43, 47, 56);
   --text-muted: rgb(94, 134, 141);
-  --bg-gradient: linear-gradient(
-    rgb(189, 225, 250) 0%,
-    rgb(162, 233, 225) 100%
-  );
+  --bg-gradient: linear-gradient(rgb(189, 225, 250) 0%,
+      rgb(162, 233, 225) 100%);
   --card-bg: rgba(255, 255, 255, 0.55);
   --border-glass: rgba(255, 255, 255, 0.6);
   --font-main: "Manrope", Arial, sans-serif;
@@ -40,12 +38,10 @@ a {
 }
 
 .spantext {
-  background: linear-gradient(
-    to right,
-    rgb(0, 178, 209),
-    rgb(16, 185, 129),
-    rgb(0, 144, 169)
-  );
+  background: linear-gradient(to right,
+      rgb(0, 178, 209),
+      rgb(16, 185, 129),
+      rgb(0, 144, 169));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -349,14 +345,28 @@ a {
   margin: 0 auto;
 }
 
-.stu_right {
+.stu_left {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.stu_righth2 {
+.stu_left .btn {
+  align-self: center;
+  width: fit-content;
+  padding: 14px 36px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 30px;
+  margin-top: 28px;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stu_lefth2 {
   font-size: clamp(32px, 4vw, 46px);
   font-weight: 800;
 }
@@ -461,11 +471,9 @@ a {
   flex-direction: column;
   align-items: center;
   padding: 3em 5%;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.4),
-    rgba(255, 255, 255, 0.2)
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.2));
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-glass);
@@ -626,7 +634,8 @@ a {
 
 @media (max-width: 768px) {
   .header-middle {
-    display: none; /* Hide top links on mobile */
+    display: none;
+    /* Hide top links on mobile */
   }
 
   .hero-section {
@@ -650,7 +659,8 @@ a {
 
 @media (max-width: 480px) {
   .btn-login {
-    display: none; /* Keep header minimal on mobile screen sizes */
+    display: none;
+    /* Keep header minimal on mobile screen sizes */
   }
 
   .ctabutton {
