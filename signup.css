@@ -1,0 +1,372 @@
+/* -------------------------------------------------------------
+   VARIABLES & BASE RESET
+   ------------------------------------------------------------- */
+:root {
+    --primary-color: rgb(0, 178, 209);
+    --primary-hover: rgb(0, 150, 177);
+    --bg-gradient: linear-gradient(135deg, rgb(189, 225, 250) 0%, rgb(162, 233, 225) 100%);
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --glass-button-bg: rgba(255, 255, 255, 0.45);
+    --glass-button-hover: rgba(255, 255, 255, 0.85);
+    --text-dark: #1f2937;
+    --text-muted: #6b7280;
+    --font-family: 'Manrope', sans-serif;
+    --border-radius-card: 20px;
+    --border-radius-input: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: var(--bg-gradient);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-family);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------------------------------------------------------
+   DESKTOP & LARGE SCREEN LAYOUT (Default: >1200px)
+   ------------------------------------------------------------- */
+.site-header {
+    width: 100%;
+    padding: 1.5em 3em;
+}
+
+.header-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h2 {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.nav-action {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.main-container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2em 3em 4em 3em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    flex: 1;
+}
+
+/* Hero Section */
+.left-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aim {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.sub-aim {
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.5;
+    opacity: 0.9;
+    max-width: 580px;
+}
+
+/* Glassmorphism Card */
+.right-box {
+    width: 100%;
+    max-width: 420px;
+    padding: 35px 30px;
+    border-radius: var(--border-radius-card);
+    background: var(--glass-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.auth-form.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.auth-form.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.welcome-title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.enter-details {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
+
+/* Form Controls */
+.creds-sec {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: var(--font-family);
+    font-size: 14px;
+    border-radius: var(--border-radius-input);
+    border: 2px solid transparent;
+    background-color: var(--glass-button-bg);
+    transition: all 0.25s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 0 4px rgba(0, 178, 209, 0.15);
+}
+
+/* Buttons */
+.btn {
+    font-family: var(--font-family);
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    font-size: 14px;
+    background-color: var(--glass-button-bg);
+    padding: 0.7em 1.2em;
+    border-radius: var(--border-radius-input);
+}
+
+.btn-secondary:hover {
+    background-color: var(--glass-button-hover);
+}
+
+.btn-google {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 30px;
+    background: var(--glass-button-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-google:hover {
+    background: var(--glass-button-hover);
+}
+
+.btn-primary {
+    font-size: 16px;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius-input);
+    padding: 12px;
+    margin-top: 8px;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Divider */
+.divider {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 18px 0;
+    color: var(--text-muted);
+}
+
+/* -------------------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+   ------------------------------------------------------------- */
+
+/* 1. Laptop / Medium Desktops (992px to 1200px) */
+@media (max-width: 1200px) {
+    .main-container {
+        gap: 40px;
+        padding: 2em 2em;
+    }
+
+    .aim {
+        font-size: 44px;
+    }
+
+    .sub-aim {
+        font-size: 17px;
+    }
+}
+
+/* 2. Tablets (768px to 991px) */
+@media (max-width: 991px) {
+    .site-header {
+        padding: 1.2em 2em;
+    }
+
+    .main-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+        padding: 1em 2em 3em 2em;
+    }
+
+    .left-box {
+        align-items: center;
+        max-width: 600px;
+    }
+
+    .aim {
+        font-size: 40px;
+    }
+
+    .sub-aim {
+        font-size: 16px;
+    }
+
+    .right-box {
+        max-width: 450px;
+    }
+}
+
+/* 3. Mobile Devices / Small Screens (< 767px) */
+@media (max-width: 767px) {
+    .site-header {
+        padding: 1em 1.2em;
+    }
+
+    .logo h2 {
+        font-size: 20px;
+    }
+
+    .nav-action {
+        gap: 8px;
+    }
+
+    #nav-prompt {
+        display: none;
+        /* Hides long descriptive text on smaller mobile screens */
+    }
+
+    .btn-secondary {
+        padding: 0.5em 1em;
+        font-size: 13px;
+    }
+
+    .main-container {
+        padding: 1em 1.2em 2em 1.2em;
+        gap: 28px;
+    }
+
+    .aim {
+        font-size: 30px;
+        line-height: 1.25;
+        margin-bottom: 12px;
+    }
+
+    .sub-aim {
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    .right-box {
+        padding: 24px 20px;
+        border-radius: 18px;
+    }
+
+    .welcome-title {
+        font-size: 20px;
+    }
+
+    .enter-details {
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+
+    input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .btn-google,
+    .btn-primary {
+        padding: 11px;
+        font-size: 14px;
+    }
+}
+
+/* 4. Ultra-Small Phones (< 380px) */
+@media (max-width: 380px) {
+    .aim {
+        font-size: 24px;
+    }
+
+    .right-box {
+        padding: 20px 14px;
+    }
+}

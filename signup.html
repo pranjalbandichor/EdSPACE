@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdSpace - Welcome</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <h2>EdSpace</h2>
+            </div>
+            <div class="nav-action">
+                <span id="nav-prompt">Don't Have An Account?</span>
+                <button type="button" id="header-action-btn" class="btn btn-secondary">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <!-- Hero Section -->
+        <section class="left-box">
+            <h1 class="aim">Unlock Your Potential Today</h1>
+            <h2 class="sub-aim">Join 50,000+ learners earning while they learn. Master new skills with our interactive
+                platform designed for the modern age.</h2>
+        </section>
+
+        <!-- Glassmorphic Auth Card -->
+        <section class="right-box">
+            <!-- Sign In Form -->
+            <form id="signin-form" class="auth-form active" onsubmit="event.preventDefault();">
+                <h3 class="welcome-title">Welcome Back</h3>
+                <p class="enter-details">Please enter your details to sign in</p>
+
+                <button type="button" class="btn btn-google">
+                    <svg width="18" height="18" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M21.35 11.1H12v3.8h5.35c-.25 1.4-1.05 2.6-2.25 3.4v2.8h3.6c2.1-1.95 3.3-4.8 3.3-8.2c0-.6-.05-1.2-.15-1.8z" />
+                        <path fill="currentColor"
+                            d="M12 23c3 0 5.5-1 7.35-2.7l-3.6-2.8c-1 .65-2.25 1.05-3.75 1.05c-2.9 0-5.35-1.95-6.25-4.6H2.05v2.9C3.85 20.4 7.6 23 12 23z" />
+                        <path fill="currentColor"
+                            d="M5.75 13.95c-.25-.75-.35-1.55-.35-2.45s.1-1.7.35-2.45V6.15H2.05C1.35 7.55 1 9.2 1 11.5s.35 3.95 1.05 5.35l3.7-2.9z" />
+                        <path fill="currentColor"
+                            d="M12 4.75c1.65 0 3.1.6 4.25 1.7l3.2-3.2C17.5 1.5 15 0 12 0C7.6 0 3.85 2.6 2.05 6.15l3.7 2.9c.9-2.65 3.35-4.3 6.25-4.3z" />
+                    </svg>
+                    Continue With Google
+                </button>
+
+                <div class="divider">OR CONTINUE WITH EMAIL</div>
+
+                <div class="creds-sec">
+                    <div class="form-group">
+                        <label for="signin-email">Email Address</label>
+                        <input id="signin-email" type="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signin-pass">Password</label>
+                        <input id="signin-pass" type="password" placeholder="Enter your password" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                </div>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signup-form" class="auth-form hidden" onsubmit="event.preventDefault();">
+                <h3 class="welcome-title">Create an Account</h3>
+                <p class="enter-details">Enter your details below to get started</p>
+
+                <button type="button" class="btn btn-google">
+                    <svg width="18" height="18" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M21.35 11.1H12v3.8h5.35c-.25 1.4-1.05 2.6-2.25 3.4v2.8h3.6c2.1-1.95 3.3-4.8 3.3-8.2c0-.6-.05-1.2-.15-1.8z" />
+                        <path fill="currentColor"
+                            d="M12 23c3 0 5.5-1 7.35-2.7l-3.6-2.8c-1 .65-2.25 1.05-3.75 1.05c-2.9 0-5.35-1.95-6.25-4.6H2.05v2.9C3.85 20.4 7.6 23 12 23z" />
+                        <path fill="currentColor"
+                            d="M5.75 13.95c-.25-.75-.35-1.55-.35-2.45s.1-1.7.35-2.45V6.15H2.05C1.35 7.55 1 9.2 1 11.5s.35 3.95 1.05 5.35l3.7-2.9z" />
+                        <path fill="currentColor"
+                            d="M12 4.75c1.65 0 3.1.6 4.25 1.7l3.2-3.2C17.5 1.5 15 0 12 0C7.6 0 3.85 2.6 2.05 6.15l3.7 2.9c.9-2.65 3.35-4.3 6.25-4.3z" />
+                    </svg>
+                    Sign Up With Google
+                </button>
+
+                <div class="divider">OR REGISTER WITH EMAIL</div>
+
+                <div class="creds-sec">
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input id="signup-name" type="text" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signup-email">Email Address</label>
+                        <input id="signup-email" type="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signup-pass">Password</label>
+                        <input id="signup-pass" type="password" placeholder="Create a password" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Create Account</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Interactive Switcher Script -->
+    <script>
+        const headerBtn = document.getElementById('header-action-btn');
+        const navPrompt = document.getElementById('nav-prompt');
+        const signInForm = document.getElementById('signin-form');
+        const signUpForm = document.getElementById('signup-form');
+
+        headerBtn.addEventListener('click', () => {
+            if (signInForm.classList.contains('active')) {
+                signInForm.classList.remove('active');
+                signInForm.classList.add('hidden');
+
+                signUpForm.classList.remove('hidden');
+                signUpForm.classList.add('active');
+
+                navPrompt.textContent = "Already Have An Account?";
+                headerBtn.textContent = "Sign In";
+            } else {
+                signUpForm.classList.remove('active');
+                signUpForm.classList.add('hidden');
+
+                signInForm.classList.remove('hidden');
+                signInForm.classList.add('active');
+
+                navPrompt.textContent = "Don't Have An Account?";
+                headerBtn.textContent = "Sign Up";
+            }
+        });
+    </script>
+</body>
+
+</html>
